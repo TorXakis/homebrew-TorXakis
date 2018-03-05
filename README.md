@@ -26,7 +26,7 @@ brew install --HEAD torxakis
 There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself.
 
 
-### Howto use `TorXakis` with CVC4 instead of Z3 on macOS
+### How to use `TorXakis` with CVC4 instead of Z3 on macOS
 
 To install [CVC4][2], use the following commands: 
 
