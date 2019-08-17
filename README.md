@@ -25,6 +25,23 @@ brew install --HEAD torxakis
 ```
 There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself.
 
+### First run of `TorXakis` ###
+
+After installing TorXakis you can do a first run and see that it can initialize Z3 correctly:
+
+```sh
+$ torxakis
+
+TXS >>  TorXakis :: Model-Based Testing
+
+TXS >>  txsserver starting: "localhost" : 53382
+TXS >>  Solver "z3" initialized : Z3 [4.8.5]
+TXS >>  TxsCore initialized
+TXS >>  input files parsed:
+TXS >>  []
+TXS >>
+```
+
 With homebrew you can also do a very basic test to check torxakis starts up and does a simple evaluation:
 
 ```sh
