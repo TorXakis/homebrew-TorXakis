@@ -11,7 +11,7 @@ class Torxakis < Formula
 
   bottle do
     cellar :any_skip_relocation
-    root_url https://github.com/TorXakis/homebrew-TorXakis/releases/download/v0.8.1/"
+    root_url "https://github.com/TorXakis/homebrew-TorXakis/releases/download/v0.8.1/"
     #root_url "https://github.com/TorXakis/TorXakis/releases/download/v0.8.1/"
 
     
