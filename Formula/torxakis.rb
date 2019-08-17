@@ -11,7 +11,9 @@ class Torxakis < Formula
 
   bottle do
     cellar :any_skip_relocation
-    root_url "https://github.com/TorXakis/TorXakis/releases/download/v0.8.1/"
+    root_url https://github.com/TorXakis/homebrew-TorXakis/releases/download/v0.8.1/"
+    #root_url "https://github.com/TorXakis/TorXakis/releases/download/v0.8.1/"
+
     
     sha256 "bbd44f31cca791975c1d384b7ba6735df8569e566ec8b00e67c6af26c23e2f2d" => :mojave
     sha256 "9fa44d885f38da6620757b43ddb5bc65e2a4e0dfe8bb710d624ad115efb6c4b7" => :high_sierra
