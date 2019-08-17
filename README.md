@@ -25,6 +25,15 @@ brew install --HEAD torxakis
 ```
 There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself.
 
+With homebrew you can also do a very basic test to check torxakis starts up and does a simple evaluation:
+
+```sh
+$ brew test torxakis.rb
+Testing torxakis
+==> running basic test
+==> printf "eval 33+7777777777777\nq" |torxakis  2>&1
+==> test succesfull
+```
 
 ### How to use `TorXakis` with CVC4 instead of Z3 on macOS
 
