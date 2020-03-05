@@ -12,8 +12,8 @@ class Torxakis < Formula
         cellar :any_skip_relocation
         root_url "https://github.com/TorXakis/homebrew-TorXakis/releases/download/v0.9.0/"
         sha256 "cf324a1c404ddf083e55e55b907a77371ca9f91ca4f2b20bc5434ebbeb3d923e" => :catalina
-        sha256 "dbb245251780eaeb96987754b3cfa780c9fa4bce541ffd20984d7eb73fe195f9  " => :mojave
-        sha256 "72c26afb6c1129038063b51d76bc0566d67c337402b378e2f50b1b766e7a4965  " => :high_sierra
+        sha256 "dbb245251780eaeb96987754b3cfa780c9fa4bce541ffd20984d7eb73fe195f9" => :mojave
+        sha256 "72c26afb6c1129038063b51d76bc0566d67c337402b378e2f50b1b766e7a4965" => :high_sierra
   end
 
 
