@@ -1,4 +1,3 @@
-
 class Torxakis < Formula
   desc "Tool for Model Based Testing"
   homepage "https://github.com/TorXakis/TorXakis"
@@ -9,7 +8,7 @@ class Torxakis < Formula
   depends_on "haskell-stack" => :build
   depends_on "z3"
 
-    
+
   def install
     ohai "running install"
     jobs = ENV.make_jobs
