@@ -68,8 +68,6 @@ brew tap cvc4/cvc4
 brew install cvc4
 ```
 
-Currently there are no binary bottles for [CVC4][2], so the installation is done from source instead and can take a long time.
- 
 TorXakis can be configured by using a configuration file `.torxakis.yaml`.
 The configuration file is expected either
 
@@ -86,6 +84,12 @@ echo 'selected-solver: "cvc4" ' > ~/.torxakis.yaml
 
 From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
  
+### How to use specific versions of Z3 or CVC4 with `TorXakis`
+
+Unfortunately Homebrew still doesn’t have an obvious builtin way of installing an older version.
+
+However there is an easy method to install older versions using versioned named as formula@version in your custom tap.
+Using [this method][6] you can install older versions of [CVC4][2]  or [Z3][3].
 
 
 
@@ -94,3 +98,4 @@ From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
 [3]: https://github.com/Z3Prover/z3
 [4]: http://formulae.brew.sh/formula/antlr@3
 [5]: https://github.com/TorXakis/TorXakis/blob/develop/.torxakis.yaml
+[6]: https://stackoverflow.com/questions/3987683/homebrew-install-specific-version-of-formula/55764594#55764594
