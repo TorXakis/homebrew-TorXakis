@@ -88,7 +88,7 @@ From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
 
 Unfortunately Homebrew still doesn’t have an obvious builtin way of installing an older version.
 
-However there is an easy method to install older versions using versioned named as formula@version in your custom tap.
+However there is an easy method to install older versions using versioned names, such as formula@version, in your custom tap.
 Using [this method][6] you can install older versions of [CVC4][2]  or [Z3][3].
 
 
