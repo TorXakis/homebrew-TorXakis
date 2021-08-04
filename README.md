@@ -86,6 +86,7 @@ From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
  
 ### How to use specific versions of Z3 or CVC4 with `TorXakis`
 
+When installing `TorXakis` with homebrew then always the latest version of [CVC4][2] and [Z3][3] within homebrew are installed.
 Unfortunately Homebrew still doesn’t have an obvious builtin way of installing an older version.
 
 However there is an easy method to install older versions using versioned names, such as formula@version, in your custom tap.
