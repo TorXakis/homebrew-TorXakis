@@ -10,7 +10,7 @@ class Torxakis < Formula
   head "https://github.com/TorXakis/TorXakis.git"
 
   bottle do
-    root_url "https://github.com/TorXakis/homebrew-TorXakis/releases/download/v0.9.0/"
+    root_url "https://github.com/TorXakis/TorXakis/releases/download/v0.9.0/"
     # next line is a HACK to allow brew on a ARM mac install intel version of torxakis in /opt/homebrew (for arm software) from the intel bottle below
     # note: torxakis and txsserver are standalone intel binaries which can run fine under Rosetta2 
     sha256 cellar: :any_skip_relocation, arm64_monterey:    "5cc7620b12bbfb4d1eb72c25727568b8faae504f71dac1da6ba111274fe68108"
