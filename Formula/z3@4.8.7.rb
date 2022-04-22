@@ -11,7 +11,7 @@ class Z3AT487 < Formula
   bottle do
     root_url "https://github.com/TorXakis/Dependencies/releases/download/z3-4.8.7/"
     sha256 cellar: :any, arm64_monterey: "57958bf2072786a623cc8c6f8f53857748e307efc35cbc79d084e907e048fb01"
-    #sha256 cellar: :any, catalina: "6dbe6b66d4d1884f6ab476b4fecdd19602bde08567b365ca6f38f057f81c9da0"
+    sha256 cellar: :any, catalina: "714491e01bb38fc49c531aed8bbb811794fd0662dcf5603790f6df2a3fb36b69"
   end
 
 

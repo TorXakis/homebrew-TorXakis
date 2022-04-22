@@ -13,7 +13,7 @@ class Cvc4AT17 < Formula
   bottle do
     root_url "https://github.com/TorXakis/Dependencies/releases/download/cvc4_1.7/"
     sha256 cellar: :any, arm64_monterey: "2cc7de2eb70c856b2ce8c113b295b50bdea633a4706858d4c92fcff92a6cecda"
-    #sha256 cellar: :any, catalina: "4de0b306de2034776f1cbb6b655690028e1f0bdfcc58b83e4912dbd2af58ff3e"
+    sha256 cellar: :any, catalina: "196e458ab72040f4ffc15c45e232b9373d865f7cd822616d2e20050c8407faf3"
   end
 
   option "with-java-bindings", "Compile with Java bindings"
