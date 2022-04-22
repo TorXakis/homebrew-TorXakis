@@ -54,7 +54,7 @@ TXS >>
 With homebrew you can also do a very basic test to check torxakis starts up and does a simple evaluation:
 
 ```sh
-$ brew test torxakis.rb
+$ brew test torxakis
 Testing torxakis
 ==> running basic test
 ==> printf "eval 33+7777777777777\nq" |torxakis  2>&1
