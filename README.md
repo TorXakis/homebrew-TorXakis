@@ -94,7 +94,12 @@ From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
 Normally when installing a package with homebrew it always the latest version of a package. Unfortunately Homebrew still doesn’t have an obvious builtin way of installing an older version. 
 
 However there is an easy method to install older versions using versioned names, such as [formula@version][6], in your custom tap.
-We use [this method][6] to install older versions of [CVC4][2]  and [Z3][3] when installing `TorXakis`. We therefore had to support the homebrew formula for older versions of [CVC4][2]  and [Z3][3] in our own `torxakis` tap. We build both `x64` and `arm64` bottles for them for easy binary installation. For the `arm64` bottle for  [CVC4][2] we even needed to patch the source code to make the build succeed on the `arm64 ` architecture.
+We use [this method][6] to install older versions of [CVC4][2]  and [Z3][3] when installing `TorXakis`. We therefore had to support the homebrew formula for older versions of [CVC4][2]  and [Z3][3] in our own `torxakis` tap. Currently we have the following specific versions as dependency for `TorXakis`:
+
+* `torxakis/torxakis/cvc4@1.7` 
+* `torxakis/torxakis/z3@4.8.7`  
+ 
+We build both `x64` and `arm64` bottles for them for easy binary installation. For the `arm64` bottle for  [CVC4][2] we even needed to patch the source code to make the build succeed on the `arm64 ` architecture.
 
 These older versions are installed as keg-only packages, which means that the SMT solvers are installed such that the tools are not included in the system path. Only the  `TorXakis` package uses them by setting the path of the tools in its own modified system path.
 
@@ -112,7 +117,7 @@ To install the latest version of [CVC4][2], use the following commands:
 
 ```sh
 brew tap cvc4/cvc4
-brew install cvc4
+brew install cvc4/cvc4/cvc4
 ```
 
 Notes: 
