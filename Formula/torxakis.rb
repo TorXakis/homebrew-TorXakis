@@ -21,7 +21,8 @@ class Torxakis < Formula
   end
 
   depends_on "haskell-stack" => :build
-  depends_on "z3"
+  depends_on "TorXakis/TorXakis/z3@4.8.7"
+  depends_on "TorXakis/TorXakis/cvc4@1.7"
 
   def install
     ohai "running install"
@@ -33,6 +34,15 @@ class Torxakis < Formula
     prefix.install "examps"
     prefix.install "docs"
   end
+ 
+  # post install does install wrapper for txsserver so we can use fixed  z3@4.8.7 and cvc4@1.7 versions which are installed keg-only
+  def post_install
+    ohai "running post install"
+    system "mv", "#{prefix}/bin/txsserver", "#{prefix}/bin/wrapped_txsserver"
+    system "curl", "-Lo", "#{prefix}/bin/txsserver", "https://raw.githubusercontent.com/TorXakis/homebrew-TorXakis/v0.9.0/scripts/wrapper_for_txsserver_homebrew.bash" 
+    system "chmod", "+x", "#{prefix}/bin/txsserver"
+  end  
+  
 
   test do
     ohai "running basic test"
