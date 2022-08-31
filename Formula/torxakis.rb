@@ -9,7 +9,7 @@ class Torxakis < Formula
   sha256 "2629a602c1dc33224336cffc05292484951233f624a64b04648f947dba6c0d94"
   head "https://github.com/TorXakis/TorXakis.git"
 
-  # class variables
+  # class variables which set the fixed z3 and cvc4 version
   @@version_z3="4.8.7"
   @@version_cvc4="1.7"
   
@@ -27,8 +27,6 @@ class Torxakis < Formula
 
   
   depends_on "haskell-stack" => :build
-  # depends_on "TorXakis/TorXakis/z3@4.8.7"
-  # depends_on "TorXakis/TorXakis/cvc4@1.7"
   depends_on "TorXakis/TorXakis/z3@#{@@version_z3}"
   depends_on "TorXakis/TorXakis/cvc4@#{@@version_cvc4}"
 
@@ -43,7 +41,7 @@ class Torxakis < Formula
     prefix.install "docs"
   end
  
-  # post install does install wrapper for txsserver so we can use fixed  z3@4.8.7 and cvc4@1.7 versions which are installed keg-only
+  # post install does install wrapper for txsserver so we can use fixed  z3 and cvc4 versions which are installed keg-only
   def post_install
     ohai "running post install"
     tmpdir = "/tmp/homebrew-#{name}-#{version}"
