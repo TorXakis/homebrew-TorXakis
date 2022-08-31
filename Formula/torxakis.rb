@@ -9,6 +9,10 @@ class Torxakis < Formula
   sha256 "2629a602c1dc33224336cffc05292484951233f624a64b04648f947dba6c0d94"
   head "https://github.com/TorXakis/TorXakis.git"
 
+  # class variables
+  @@version_z3="4.8.7"
+  @@version_cvc4="1.7"
+  
   bottle do
     root_url "https://github.com/TorXakis/TorXakis/releases/download/v0.9.0/"
     # next line is a HACK to allow brew on a ARM mac install intel version of torxakis in /opt/homebrew (for arm software) from the intel bottle below
@@ -20,9 +24,13 @@ class Torxakis < Formula
     sha256 cellar: :any_skip_relocation, high_sierra: "72c26afb6c1129038063b51d76bc0566d67c337402b378e2f50b1b766e7a4965"    
   end
 
+
+  
   depends_on "haskell-stack" => :build
-  depends_on "TorXakis/TorXakis/z3@4.8.7"
-  depends_on "TorXakis/TorXakis/cvc4@1.7"
+  # depends_on "TorXakis/TorXakis/z3@4.8.7"
+  # depends_on "TorXakis/TorXakis/cvc4@1.7"
+  depends_on "TorXakis/TorXakis/z3@#{@@version_z3}"
+  depends_on "TorXakis/TorXakis/cvc4@#{@@version_cvc4}"
 
   def install
     ohai "running install"
@@ -38,11 +46,12 @@ class Torxakis < Formula
   # post install does install wrapper for txsserver so we can use fixed  z3@4.8.7 and cvc4@1.7 versions which are installed keg-only
   def post_install
     ohai "running post install"
-    system "mv", "#{prefix}/bin/txsserver", "#{prefix}/bin/wrapped_txsserver"
-    system "curl", "-Lo", "#{prefix}/bin/txsserver", "https://raw.githubusercontent.com/TorXakis/homebrew-TorXakis/v0.9.0/scripts/wrapper_for_txsserver_homebrew.bash" 
-    system "chmod", "+x", "#{prefix}/bin/txsserver"
-  end  
-  
+    tmpdir = "/tmp/homebrew-#{name}-#{version}"
+    system "mkdir","-p", "#{tmpdir}/"
+    system "curl", "-Lo", "#{tmpdir}/wrap_executable_path", "https://github.com/TorXakis/Dependencies/releases/download/z3-4.8.7/wrap_executable_path" 
+    system "chmod", "+x", "#{tmpdir}/wrap_executable_path"
+    system "#{tmpdir}/wrap_executable_path", "#{prefix}/bin/txsserver",  "TORXAKIS_USE_INTERNAL_SMT_SOLVER", "#{HOMEBREW_PREFIX}/Cellar/z3@#{@@version_z3}/#{@@version_z3}/bin", "#{HOMEBREW_PREFIX}/Cellar/cvc4@#{@@version_cvc4}/#{@@version_cvc4}//bin"
+  end
 
   test do
     ohai "running basic test"
