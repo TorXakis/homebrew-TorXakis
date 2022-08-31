@@ -31,6 +31,32 @@ class Cvc4AT17 < Formula
   depends_on "cryptominisat" 
   #depends_on :arch => :x86_64
 
+  # needed to patch 'get-antlr-3.4'
+  # ==============================
+  #
+  # * description patch
+  #
+  #      after line
+  #        rm -rf src/antlr3debughandlers.c && touch src/antlr3debughandlers.c
+  #
+  #      add
+  #         curl -Lo config.guess 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+  #         curl -Lo config.sub 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+  #
+  #      3 TIMES replace
+  #        if [ "${MACHINE_TYPE}" == 'x86_64' ]; then
+  #       with
+  #        if [[ "${MACHINE_TYPE}" == *'64'* ]]; then
+  #
+  #       => also matches  aarch64 !!
+  #
+  #
+  # * created patch file: get-antlr-3.4.patch
+  #
+  # * apply patch
+  #
+  #     patch CVC4-archived-1.8/contrib/get-antlr-3.4 ../get-antlr-3.4.patch
+  #  
   patch :p1 do
     url "https://github.com/TorXakis/Dependencies/releases/download/cvc4_1.7/cvc4-1.7_get-antlr-3.4.patch"
     sha256 "1b2dd452badb13f96944dd35121a36e84f864dac4970cd41733c226bd2af0444"
