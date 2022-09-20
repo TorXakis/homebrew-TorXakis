@@ -49,6 +49,25 @@ Testing torxakis
 ==> test succesfull
 ```
 
+### How to use `TorXakis` with CVC4 instead of Z3 on macOS ###
+
+By default `TorXakis` uses the [Z3][3] tool, however we can configure it to use [CVC4][2] instead.
+
+TorXakis can be configured by using a configuration file `.torxakis.yaml`.
+The configuration file is expected either
+
+* in the working directory or
+* in the home directory.
+
+The working directory has precedence over the latter. An example of a `.torxakis.yaml` file can be found in the `TorXakis` github repository at this [page][5].
+   
+To configure `TorXakis` to use [CVC4][2] instead of [Z3][3] we use the `~/.torxakis.yaml` configuration file to change the default [SMT][1] solver being used, which we can create  using the following commands:
+
+```sh
+echo 'selected-solver: "cvc4" ' > ~/.torxakis.yaml
+```
+
+From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
 
 
 ## More info ##
@@ -72,28 +91,7 @@ To install the latest HEAD source of `TorXakis`, use the following commands:
 brew tap torxakis/torxakis
 brew install --HEAD torxakis
 ```
-There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself.
-
-### How to use `TorXakis` with CVC4 instead of Z3 on macOS ###
-
-By default `TorXakis` uses the [Z3][3] tool, however we can configure it to use [CVC4][2] instead.
-
-TorXakis can be configured by using a configuration file `.torxakis.yaml`.
-The configuration file is expected either
-
-* in the working directory or
-* in the home directory.
-
-The working directory has precedence over the latter. An example of a `.torxakis.yaml` file can be found in the `TorXakis` github repository at this [page][5].
-   
-To configure `TorXakis` to use [CVC4][2] instead of [Z3][3] we use the `~/.torxakis.yaml` configuration file to change the default [SMT][1] solver being used, which we can create  using the following commands:
-
-```sh
-echo 'selected-solver: "cvc4" ' > ~/.torxakis.yaml
-```
-
-From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
- 
+There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself. 
  
 ### Specific versions of SMT tools for compatibity  ###
 
