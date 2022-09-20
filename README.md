@@ -24,25 +24,6 @@ Homebrew will also install **specific versions** of the [SMT][1] solvers [Z3][3]
 Note:
 * If you just have the newest MacOS version installed for which no pre-build binary is available yet, then homebrew will install the pre-build binary   from the previous MacOS version.  In the **improbable** case that this gives problems you can still do a build from source. 
 
-#### Build `TorXakis` from source ####
-
-Do a build from source with the commands: 
-
-```sh
-brew tap torxakis/torxakis
-brew install --build-from-source torxakis
-```
-
-#### Build `TorXakis` from HEAD of development source ####
-
-To install the latest HEAD source of `TorXakis`, use the following commands: 
-
-```sh
-brew tap torxakis/torxakis
-brew install --HEAD torxakis
-```
-There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself.
-
 ### First run of `TorXakis` ###
 
 After installing TorXakis you can do a first run and see that it can initialize Z3 correctly:
@@ -74,6 +55,26 @@ Testing torxakis
 
 ## More info ##
 
+### Build `TorXakis` from source ###
+
+#### Build `TorXakis` from release source ####
+
+Do a build from source with the commands: 
+
+```sh
+brew tap torxakis/torxakis
+brew install --build-from-source torxakis
+```
+
+#### Build `TorXakis` from HEAD of development source ####
+
+To install the latest HEAD source of `TorXakis`, use the following commands: 
+
+```sh
+brew tap torxakis/torxakis
+brew install --HEAD torxakis
+```
+There is no binary pre-build for the latest source, therefore homebrew will build and install `TorXakis` from that latest source itself.
 
 ### How to use `TorXakis` with CVC4 instead of Z3 on macOS ###
 
