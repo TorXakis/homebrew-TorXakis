@@ -10,6 +10,8 @@ system follow the installation instruction on the [homebrew homepage](https://br
 
 ### Install `TorXakis` on macOS ###
 
+#### Install pre-build `TorXakis` ####
+
 To install `TorXakis` using this tap, use the following commands:
 
 ```sh
@@ -19,12 +21,18 @@ brew install torxakis
 Homebrew will fetch a pre-build binary and do a quick installation. 
 Homebrew will also install **specific versions** of the [SMT][1] solvers [Z3][3] and [CVC4][2]  as runtime dependency of the  `TorXakis` package. 
 
-If you just have the newest MacOS version installed for which no pre-build binary is installed yet, then homebrew will install the pre-build binary from the previous MacOS version. In case this gives problems, which is improbable, then you can still force a build from source with the commands: 
+If you just have the newest MacOS version installed for which no pre-build binary is installed yet, then homebrew will install the pre-build binary from the previous MacOS version. In case this gives problems, which is improbable, then you still do a build from source. 
+
+#### Build `TorXakis` from source ####
+
+Do a build from source with the commands: 
 
 ```sh
 brew tap torxakis/torxakis
 brew install --build-from-source torxakis
 ```
+
+#### Build `TorXakis` from HEAD of development source ####
 
 To install the latest HEAD source of `TorXakis`, use the following commands: 
 
