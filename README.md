@@ -10,8 +10,6 @@ system follow the installation instruction on the [homebrew homepage](https://br
 
 ### Install `TorXakis` on macOS ###
 
-#### Install pre-build `TorXakis` ####
-
 To install `TorXakis` using this tap, use the following commands:
 
 ```sh
