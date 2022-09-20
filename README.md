@@ -113,6 +113,34 @@ These older versions are installed as keg-only packages, which means that the SM
 
 ### How to use the latest versions of Z3 or CVC4 with `TorXakis` ###
 
+
+#### Configure `TorXakis` to use latest version of Z3 or CVC4  ####
+
+##### using environment variable   #####
+
+By setting the following environment variable
+
+```sh
+export TORXAKIS_USE_INTERNAL_SMT_SOLVER=false
+```
+
+we instruct `TorXakis` to not use its own specific versions of [CVC4][2]  and [Z3][3], but instead use the latest versions of these tools installed on the system path. 
+
+##### using config file to set specific path of Z3 or CVC4  #####
+
+In the `~/.torxakis.yaml` configuration file we can also specify the executable path of the SMT solver used. 
+ 
+Eg. to configure the use of `/opt/homebrew/Cellar/z3/4.8.15/bin/z3` use the `~/.torxakis.yaml` configuration file:
+
+```sh
+selected-solver: "z3"
+available-solvers:
+- solver-id: "z3"
+  executable-name: "/opt/homebrew/Cellar/z3/4.8.15/bin/z3"
+  flags:
+  - "-smt2"
+  - "-in"
+```
 #### Install the latest versions of Z3 or CVC4  #####
 
 To install the latest version of [Z3][3], use the following command: 
@@ -133,32 +161,6 @@ Notes:
 * currently [CVC4][2] nor its successor [CVC5][7] does not provide bottles for the `arm64 ` architecture, so we have to build the package from source when we install it. 
 * for the `arm64 ` architecture for [CVC4][2] you probably also need to apply a patch to the source code before the build will succeed on that platform. 
 Hint: take a look at our [Homebrew Formula for cvc4@1.7][8] 
-
-#### Configure `TorXakis` to use latest version of Z3 or CVC4  ####
-
-By setting the following environment variable
-
-```sh
-export TORXAKIS_USE_INTERNAL_SMT_SOLVER=false
-```
-
-we instruct `TorXakis` to not use its own specific versions of [CVC4][2]  and [Z3][3], but instead use the latest versions of these tools installed on the system path. 
-
-#### Configure `TorXakis` to use specific executable path of Z3 or CVC4  ####
-
-In the `~/.torxakis.yaml` configuration file we can also specify the executable path of the SMT solver used. 
- 
-Eg. to configure the use of `/opt/homebrew/Cellar/z3/4.8.15/bin/z3` use the `~/.torxakis.yaml` configuration file:
-
-```sh
-selected-solver: "z3"
-available-solvers:
-- solver-id: "z3"
-  executable-name: "/opt/homebrew/Cellar/z3/4.8.15/bin/z3"
-  flags:
-  - "-smt2"
-  - "-in"
-```
 
 
 [1]: https://en.wikipedia.org/wiki/Satisfiability_modulo_theories
