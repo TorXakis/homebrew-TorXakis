@@ -132,6 +132,7 @@ Notes:
 
 * currently [CVC4][2] nor its successor [CVC5][7] does not provide bottles for the `arm64 ` architecture, so we have to build the package from source when we install it. 
 * for the `arm64 ` architecture for [CVC4][2] we probably also need to apply a patch to the source code before the build will succeed on that platform. 
+Hint: take a look at our [Homebrew Formula for cvc4%401.7][8] 
 
 #### Configure `TorXakis` to use latest version of Z3 or CVC4  ####
 
@@ -167,3 +168,4 @@ available-solvers:
 [5]: https://github.com/TorXakis/TorXakis/blob/develop/.torxakis.yaml
 [6]: https://docs.brew.sh/Versions
 [7]: https://cvc5.github.io
+[8]: https://github.com/TorXakis/homebrew-TorXakis/blob/master/Formula/cvc4%401.7.rb
