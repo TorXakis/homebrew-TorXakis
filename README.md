@@ -21,7 +21,8 @@ brew install torxakis
 Homebrew will fetch a pre-build binary and do a quick installation. 
 Homebrew will also install **specific versions** of the [SMT][1] solvers [Z3][3] and [CVC4][2]  as runtime dependency of the  `TorXakis` package. 
 
-If you just have the newest MacOS version installed for which no pre-build binary is available yet, then homebrew will install the pre-build binary from the previous MacOS version.  In the **improbable** case that this gives problems you can still do a build from source. 
+Note:
+* If you just have the newest MacOS version installed for which no pre-build binary is available yet, then homebrew will install the pre-build binary   from the previous MacOS version.  In the **improbable** case that this gives problems you can still do a build from source. 
 
 #### Build `TorXakis` from source ####
 
