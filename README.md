@@ -99,9 +99,9 @@ From now on `TorXakis` will use [CVC4][2]  instead of [Z3][3].
 
 `TorXakis` installs **specific versions** of  [Z3][3] and [CVC4][2] as runtime dependency to guarantee compatibility with the `TorXakis` tool. 
 
-Normally when installing a package with homebrew it always the latest version of a package. Unfortunately Homebrew still doesn’t have an obvious builtin way of installing an older version. 
+Normally when installing a package with homebrew it always installs the latest version of a package. Unfortunately Homebrew doesn’t support installing older versions; if there is a newer version, the old version is removed from the Homebrew repository. 
 
-However there is an easy method to install older versions using versioned names, such as [formula@version][6], in your custom tap.
+However there is an easy method to still install older versions using versioned names, such as [formula@version][6], in your custom tap.
 We use [this method][6] to install older versions of [CVC4][2]  and [Z3][3] when installing `TorXakis`. We therefore had to support the homebrew formula for older versions of [CVC4][2]  and [Z3][3] in our own `torxakis` tap. Currently we have the following specific versions as dependency for `TorXakis`:
 
 * `torxakis/torxakis/cvc4@1.7` 
